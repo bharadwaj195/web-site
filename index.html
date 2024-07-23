@@ -52,6 +52,8 @@
 				<li><a href="gallery.html" class="smoothScroll">GALLERY</a></li>
 				<li><a href="photos.html" class="smoothScroll">PHOTOS</a></li>
 				<li><a href="index.html" class="smoothScroll">CONTACT</a></li>
+				<!-- <li><button type="submit" onclick="logout()"><a href="D:/WEB/Project/Web-project/test-site2/index.html" class="smoothScroll">LOGOUT</a></li></button></li> -->
+				<li type="submit" onclick="logout()"><a href="D:/WEB/Project/Web-project/test-site2/index.html" class="smoothScroll">LOGOUT</a></li>
 			    
 			</ul>
 		</div>
@@ -184,3 +186,18 @@
 
 </body>
 </html>
+<script>
+    function logout() {
+      // Simulate logout logic (set authenticated flag to false)
+      sessionStorage.removeItem('authenticated');
+      window.location.href = 'D:/WEB/Project/Web-project/test-site2/index.html';
+    }
+
+    // Check if user is authenticated on page load
+    window.onload = function() {
+      if (!sessionStorage.getItem('authenticated')) {
+        // If not authenticated, redirect to login page
+        window.location.href = 'D:/WEB/Project/Web-project/test-site2/index.html';
+      }
+    };
+  </script>
